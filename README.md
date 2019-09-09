@@ -16,3 +16,8 @@ cd POISSON_IMAGE_EDITING
 make
 sudo make install
 ```
+
+# SAMPLE
+
+![]()
+![]()
