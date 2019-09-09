@@ -24,13 +24,18 @@ int main(int argc, char *argv[]){
         \n  -o\t出力ファイル名(デフォルト: %s)\
         \n  -r\t繰り返し回数(デフォルト: %d)\
         \n  -p\t貼り付け画像の座標(デフォルト: 0,0)\
+        \n  -s\tリサイズ(デフォルト: 1.0)\
         \n", argv[0], OUTPUT_FILE, COUNT);
         return -1;
     }
 
+    double size = 1.0;
     int repert = 0;
     if(char* rep = cmd_option(argc, argv, 'r'))
         repert = atoi(rep);
+
+    if(char* siz = cmd_option(argc, argv, 's'))
+        size = atof(siz);
 
     char tmp_p[64] = "0,0";
     char *opt_p = cmd_option(argc, argv, 'p');
@@ -44,7 +49,9 @@ int main(int argc, char *argv[]){
     target = imread(argv[1]);
     printf("読み込み(元画像): %s\n", argv[1]);
     source = imread(argv[2], -1);
+    resize(source, source, Size(), size, size);
     printf("読み込み(貼付画像): %s\n", argv[2]);
+    printf("貼り付け画像の拡大率: %.1f%%\n", size*100);
 
     target.convertTo(target, CV_32FC3);
     source.convertTo(source, CV_32FC4);
