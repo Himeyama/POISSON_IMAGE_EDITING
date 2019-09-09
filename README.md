@@ -19,5 +19,11 @@ sudo make install
 
 # SAMPLE
 
-![]()
-![]()
+## TARGET
+![](https://raw.githubusercontent.com/hikaright/POISSON_IMAGE_EDITING/master/Yamagata_Aritomo.png)
+
+## SOURCE
+![](https://raw.githubusercontent.com/hikaright/POISSON_IMAGE_EDITING/master/yukichi.png)
+
+## FUSION
+![](https://raw.githubusercontent.com/hikaright/POISSON_IMAGE_EDITING/master/output.png)
