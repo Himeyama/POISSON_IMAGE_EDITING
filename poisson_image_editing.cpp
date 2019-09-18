@@ -64,10 +64,10 @@ int main(int argc, char *argv[]){
                 if(PX4(source, i, j)[3] == 255)
                     REP(rgb, 3)
                         PX3(target,i+y,j+x)[rgb] = 
-                        ( PX3(target,i-1+y,j-1+x)[rgb] - PX4(source,i-1,j-1)[rgb]
-                        + PX3(target,i-1+y,j+1+x)[rgb] - PX4(source,i-1,j+1)[rgb]
-                        + PX3(target,i+1+y,j-1+x)[rgb] - PX4(source,i+1,j-1)[rgb]
-                        + PX3(target,i+1+y,j+1+x)[rgb] - PX4(source,i+1,j+1)[rgb])/4 
+                        ( PX3(target,i-1+y,j+x)[rgb] - PX4(source,i-1,j)[rgb]
+                        + PX3(target,i+y,j+1+x)[rgb] - PX4(source,i,j+1)[rgb]
+                        + PX3(target,i+1+y,j+x)[rgb] - PX4(source,i+1,j)[rgb]
+                        + PX3(target,i+y,j-1+x)[rgb] - PX4(source,i,j-1)[rgb])/4 
                         + PX4(source,i,j)[rgb];
     }
     printf("\b\b\b   \n");
