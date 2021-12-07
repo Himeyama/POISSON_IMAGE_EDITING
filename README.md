@@ -22,3 +22,10 @@ cd POISSON_IMAGE_EDITING
 make
 sudo make install
 ```
+
+## 問題
+> PKG_CONFIG_PATH が設定されていない場合
+```bash
+PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig make
+
+```
